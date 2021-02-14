@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Sales_Records_Application
 {
-    public partial class frmSales : Form
+    public partial class frmHome : Form
     {
-        public frmSales()
+        public frmHome()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSaveOrder_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
