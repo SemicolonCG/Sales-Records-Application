@@ -33,7 +33,7 @@ namespace Sales_Records_Application
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtNote = new System.Windows.Forms.RichTextBox();
             this.dtpInvoDate = new System.Windows.Forms.DateTimePicker();
-            this.cusCmb = new System.Windows.Forms.ComboBox();
+            this.cmbCustomer = new System.Windows.Forms.ComboBox();
             this.txtRefNo = new System.Windows.Forms.TextBox();
             this.txtIncl = new System.Windows.Forms.TextBox();
             this.txtTax = new System.Windows.Forms.TextBox();
@@ -54,6 +54,12 @@ namespace Sales_Records_Application
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveOrder = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtSubrb = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtState = new System.Windows.Forms.TextBox();
+            this.txtPcode = new System.Windows.Forms.TextBox();
             this.mainPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +70,7 @@ namespace Sales_Records_Application
             this.mainPnl.Controls.Add(this.dataGridView1);
             this.mainPnl.Controls.Add(this.txtNote);
             this.mainPnl.Controls.Add(this.dtpInvoDate);
-            this.mainPnl.Controls.Add(this.cusCmb);
+            this.mainPnl.Controls.Add(this.cmbCustomer);
             this.mainPnl.Controls.Add(this.txtRefNo);
             this.mainPnl.Controls.Add(this.txtIncl);
             this.mainPnl.Controls.Add(this.txtTax);
@@ -76,11 +82,17 @@ namespace Sales_Records_Application
             this.mainPnl.Controls.Add(this.txtExcl);
             this.mainPnl.Controls.Add(this.label6);
             this.mainPnl.Controls.Add(this.label8);
+            this.mainPnl.Controls.Add(this.txtPcode);
             this.mainPnl.Controls.Add(this.txtAdd3);
+            this.mainPnl.Controls.Add(this.txtState);
             this.mainPnl.Controls.Add(this.label5);
+            this.mainPnl.Controls.Add(this.label14);
             this.mainPnl.Controls.Add(this.txtAdd2);
+            this.mainPnl.Controls.Add(this.txtSubrb);
             this.mainPnl.Controls.Add(this.label4);
+            this.mainPnl.Controls.Add(this.label13);
             this.mainPnl.Controls.Add(this.txtAdd1);
+            this.mainPnl.Controls.Add(this.label12);
             this.mainPnl.Controls.Add(this.label3);
             this.mainPnl.Controls.Add(this.label2);
             this.mainPnl.Controls.Add(this.label1);
@@ -112,13 +124,17 @@ namespace Sales_Records_Application
             this.dtpInvoDate.Size = new System.Drawing.Size(168, 20);
             this.dtpInvoDate.TabIndex = 3;
             // 
-            // cusCmb
+            // cmbCustomer
             // 
-            this.cusCmb.FormattingEnabled = true;
-            this.cusCmb.Location = new System.Drawing.Point(113, 22);
-            this.cusCmb.Name = "cusCmb";
-            this.cusCmb.Size = new System.Drawing.Size(168, 21);
-            this.cusCmb.TabIndex = 2;
+            this.cmbCustomer.FormattingEnabled = true;
+            this.cmbCustomer.Location = new System.Drawing.Point(113, 22);
+            this.cmbCustomer.Name = "cmbCustomer";
+            this.cmbCustomer.Size = new System.Drawing.Size(168, 21);
+            this.cmbCustomer.TabIndex = 2;
+            this.cmbCustomer.SelectedIndexChanged += new System.EventHandler(this.cmbCustomer_SelectedIndexChanged);
+            this.cmbCustomer.SelectionChangeCommitted += new System.EventHandler(this.cusCmb_SelectionChangeCommitted);
+            this.cmbCustomer.SelectedValueChanged += new System.EventHandler(this.cmbCustomer_SelectedValueChanged);
+            this.cmbCustomer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbCustomer_MouseClick);
             // 
             // txtRefNo
             // 
@@ -296,6 +312,57 @@ namespace Sales_Records_Application
             this.btnSaveOrder.UseVisualStyleBackColor = true;
             this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(25, 130);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Suburb";
+            this.label12.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(25, 154);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "State";
+            this.label13.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtSubrb
+            // 
+            this.txtSubrb.Location = new System.Drawing.Point(113, 127);
+            this.txtSubrb.Name = "txtSubrb";
+            this.txtSubrb.Size = new System.Drawing.Size(168, 20);
+            this.txtSubrb.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(25, 180);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(64, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Postal Code";
+            this.label14.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtState
+            // 
+            this.txtState.Location = new System.Drawing.Point(113, 151);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(168, 20);
+            this.txtState.TabIndex = 1;
+            // 
+            // txtPcode
+            // 
+            this.txtPcode.Location = new System.Drawing.Point(113, 177);
+            this.txtPcode.Name = "txtPcode";
+            this.txtPcode.Size = new System.Drawing.Size(168, 20);
+            this.txtPcode.TabIndex = 1;
+            // 
             // frmSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,6 +380,7 @@ namespace Sales_Records_Application
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales Order";
+            this.Load += new System.EventHandler(this.frmSales_Load);
             this.mainPnl.ResumeLayout(false);
             this.mainPnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -323,7 +391,7 @@ namespace Sales_Records_Application
         #endregion
 
         private System.Windows.Forms.Panel mainPnl;
-        private System.Windows.Forms.ComboBox cusCmb;
+        private System.Windows.Forms.ComboBox cmbCustomer;
         private System.Windows.Forms.TextBox txtAdd1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIncl;
@@ -347,6 +415,12 @@ namespace Sales_Records_Application
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnSaveOrder;
+        private System.Windows.Forms.TextBox txtPcode;
+        private System.Windows.Forms.TextBox txtState;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtSubrb;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }
 
