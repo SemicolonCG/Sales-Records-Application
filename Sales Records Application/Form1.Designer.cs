@@ -30,7 +30,7 @@ namespace Sales_Records_Application
         private void InitializeComponent()
         {
             this.mainPnl = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSales = new System.Windows.Forms.DataGridView();
             this.txtNote = new System.Windows.Forms.RichTextBox();
             this.dtpInvoDate = new System.Windows.Forms.DateTimePicker();
             this.cmbCustomer = new System.Windows.Forms.ComboBox();
@@ -60,14 +60,23 @@ namespace Sales_Records_Application
             this.label14 = new System.Windows.Forms.Label();
             this.txtState = new System.Windows.Forms.TextBox();
             this.txtPcode = new System.Windows.Forms.TextBox();
+            this.cmbItemCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cmbItemDescription = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.txt_Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtExclAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTaxAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtInclAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPnl
             // 
             this.mainPnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mainPnl.Controls.Add(this.dataGridView1);
+            this.mainPnl.Controls.Add(this.dgvSales);
             this.mainPnl.Controls.Add(this.txtNote);
             this.mainPnl.Controls.Add(this.dtpInvoDate);
             this.mainPnl.Controls.Add(this.cmbCustomer);
@@ -98,20 +107,30 @@ namespace Sales_Records_Application
             this.mainPnl.Controls.Add(this.label1);
             this.mainPnl.Location = new System.Drawing.Point(1, 34);
             this.mainPnl.Name = "mainPnl";
-            this.mainPnl.Size = new System.Drawing.Size(608, 508);
+            this.mainPnl.Size = new System.Drawing.Size(976, 618);
             this.mainPnl.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvSales
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 213);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(556, 176);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cmbItemCode,
+            this.cmbItemDescription,
+            this.txt_Note,
+            this.txtQuantity,
+            this.txtPrice,
+            this.txt_Tax,
+            this.txtExclAmount,
+            this.txtTaxAmount,
+            this.txtInclAmount});
+            this.dgvSales.Location = new System.Drawing.Point(10, 213);
+            this.dgvSales.Name = "dgvSales";
+            this.dgvSales.Size = new System.Drawing.Size(943, 176);
+            this.dgvSales.TabIndex = 5;
             // 
             // txtNote
             // 
-            this.txtNote.Location = new System.Drawing.Point(416, 102);
+            this.txtNote.Location = new System.Drawing.Point(632, 94);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(168, 95);
             this.txtNote.TabIndex = 4;
@@ -119,7 +138,7 @@ namespace Sales_Records_Application
             // 
             // dtpInvoDate
             // 
-            this.dtpInvoDate.Location = new System.Drawing.Point(416, 48);
+            this.dtpInvoDate.Location = new System.Drawing.Point(632, 40);
             this.dtpInvoDate.Name = "dtpInvoDate";
             this.dtpInvoDate.Size = new System.Drawing.Size(168, 20);
             this.dtpInvoDate.TabIndex = 3;
@@ -127,7 +146,7 @@ namespace Sales_Records_Application
             // cmbCustomer
             // 
             this.cmbCustomer.FormattingEnabled = true;
-            this.cmbCustomer.Location = new System.Drawing.Point(113, 22);
+            this.cmbCustomer.Location = new System.Drawing.Point(227, 14);
             this.cmbCustomer.Name = "cmbCustomer";
             this.cmbCustomer.Size = new System.Drawing.Size(168, 21);
             this.cmbCustomer.TabIndex = 2;
@@ -138,21 +157,21 @@ namespace Sales_Records_Application
             // 
             // txtRefNo
             // 
-            this.txtRefNo.Location = new System.Drawing.Point(416, 74);
+            this.txtRefNo.Location = new System.Drawing.Point(632, 66);
             this.txtRefNo.Name = "txtRefNo";
             this.txtRefNo.Size = new System.Drawing.Size(168, 20);
             this.txtRefNo.TabIndex = 1;
             // 
             // txtIncl
             // 
-            this.txtIncl.Location = new System.Drawing.Point(416, 456);
+            this.txtIncl.Location = new System.Drawing.Point(667, 465);
             this.txtIncl.Name = "txtIncl";
             this.txtIncl.Size = new System.Drawing.Size(168, 20);
             this.txtIncl.TabIndex = 1;
             // 
             // txtTax
             // 
-            this.txtTax.Location = new System.Drawing.Point(416, 431);
+            this.txtTax.Location = new System.Drawing.Point(667, 440);
             this.txtTax.Name = "txtTax";
             this.txtTax.Size = new System.Drawing.Size(168, 20);
             this.txtTax.TabIndex = 1;
@@ -160,7 +179,7 @@ namespace Sales_Records_Application
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(328, 102);
+            this.label11.Location = new System.Drawing.Point(485, 94);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(30, 13);
             this.label11.TabIndex = 0;
@@ -170,7 +189,7 @@ namespace Sales_Records_Application
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(328, 77);
+            this.label10.Location = new System.Drawing.Point(485, 69);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 13);
             this.label10.TabIndex = 0;
@@ -180,7 +199,7 @@ namespace Sales_Records_Application
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(328, 459);
+            this.label7.Location = new System.Drawing.Point(547, 468);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 0;
@@ -189,7 +208,7 @@ namespace Sales_Records_Application
             // 
             // txtInvo
             // 
-            this.txtInvo.Location = new System.Drawing.Point(416, 22);
+            this.txtInvo.Location = new System.Drawing.Point(632, 14);
             this.txtInvo.Name = "txtInvo";
             this.txtInvo.Size = new System.Drawing.Size(168, 20);
             this.txtInvo.TabIndex = 1;
@@ -197,7 +216,7 @@ namespace Sales_Records_Application
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(328, 51);
+            this.label9.Location = new System.Drawing.Point(485, 43);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 13);
             this.label9.TabIndex = 0;
@@ -206,7 +225,7 @@ namespace Sales_Records_Application
             // 
             // txtExcl
             // 
-            this.txtExcl.Location = new System.Drawing.Point(416, 407);
+            this.txtExcl.Location = new System.Drawing.Point(667, 416);
             this.txtExcl.Name = "txtExcl";
             this.txtExcl.Size = new System.Drawing.Size(168, 20);
             this.txtExcl.TabIndex = 1;
@@ -214,7 +233,7 @@ namespace Sales_Records_Application
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(328, 434);
+            this.label6.Location = new System.Drawing.Point(547, 443);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 0;
@@ -224,7 +243,7 @@ namespace Sales_Records_Application
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(328, 25);
+            this.label8.Location = new System.Drawing.Point(485, 17);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 13);
             this.label8.TabIndex = 0;
@@ -233,7 +252,7 @@ namespace Sales_Records_Application
             // 
             // txtAdd3
             // 
-            this.txtAdd3.Location = new System.Drawing.Point(113, 99);
+            this.txtAdd3.Location = new System.Drawing.Point(227, 91);
             this.txtAdd3.Name = "txtAdd3";
             this.txtAdd3.Size = new System.Drawing.Size(168, 20);
             this.txtAdd3.TabIndex = 1;
@@ -241,7 +260,7 @@ namespace Sales_Records_Application
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(328, 410);
+            this.label5.Location = new System.Drawing.Point(547, 419);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 0;
@@ -250,7 +269,7 @@ namespace Sales_Records_Application
             // 
             // txtAdd2
             // 
-            this.txtAdd2.Location = new System.Drawing.Point(113, 73);
+            this.txtAdd2.Location = new System.Drawing.Point(227, 65);
             this.txtAdd2.Name = "txtAdd2";
             this.txtAdd2.Size = new System.Drawing.Size(168, 20);
             this.txtAdd2.TabIndex = 1;
@@ -258,7 +277,7 @@ namespace Sales_Records_Application
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 102);
+            this.label4.Location = new System.Drawing.Point(106, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 0;
@@ -267,7 +286,7 @@ namespace Sales_Records_Application
             // 
             // txtAdd1
             // 
-            this.txtAdd1.Location = new System.Drawing.Point(113, 49);
+            this.txtAdd1.Location = new System.Drawing.Point(227, 41);
             this.txtAdd1.Name = "txtAdd1";
             this.txtAdd1.Size = new System.Drawing.Size(168, 20);
             this.txtAdd1.TabIndex = 1;
@@ -275,7 +294,7 @@ namespace Sales_Records_Application
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 76);
+            this.label3.Location = new System.Drawing.Point(106, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 0;
@@ -285,7 +304,7 @@ namespace Sales_Records_Application
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 52);
+            this.label2.Location = new System.Drawing.Point(106, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 0;
@@ -295,7 +314,7 @@ namespace Sales_Records_Application
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 25);
+            this.label1.Location = new System.Drawing.Point(106, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 0;
@@ -315,7 +334,7 @@ namespace Sales_Records_Application
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(25, 130);
+            this.label12.Location = new System.Drawing.Point(106, 122);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 0;
@@ -325,7 +344,7 @@ namespace Sales_Records_Application
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(25, 154);
+            this.label13.Location = new System.Drawing.Point(106, 146);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(32, 13);
             this.label13.TabIndex = 0;
@@ -334,7 +353,7 @@ namespace Sales_Records_Application
             // 
             // txtSubrb
             // 
-            this.txtSubrb.Location = new System.Drawing.Point(113, 127);
+            this.txtSubrb.Location = new System.Drawing.Point(227, 119);
             this.txtSubrb.Name = "txtSubrb";
             this.txtSubrb.Size = new System.Drawing.Size(168, 20);
             this.txtSubrb.TabIndex = 1;
@@ -342,7 +361,7 @@ namespace Sales_Records_Application
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(25, 180);
+            this.label14.Location = new System.Drawing.Point(106, 172);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(64, 13);
             this.label14.TabIndex = 0;
@@ -351,24 +370,71 @@ namespace Sales_Records_Application
             // 
             // txtState
             // 
-            this.txtState.Location = new System.Drawing.Point(113, 151);
+            this.txtState.Location = new System.Drawing.Point(227, 143);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(168, 20);
             this.txtState.TabIndex = 1;
             // 
             // txtPcode
             // 
-            this.txtPcode.Location = new System.Drawing.Point(113, 177);
+            this.txtPcode.Location = new System.Drawing.Point(227, 169);
             this.txtPcode.Name = "txtPcode";
             this.txtPcode.Size = new System.Drawing.Size(168, 20);
             this.txtPcode.TabIndex = 1;
+            // 
+            // cmbItemCode
+            // 
+            this.cmbItemCode.HeaderText = "ItemCode";
+            this.cmbItemCode.Name = "cmbItemCode";
+            // 
+            // cmbItemDescription
+            // 
+            this.cmbItemDescription.HeaderText = "ItemDescription";
+            this.cmbItemDescription.Name = "cmbItemDescription";
+            this.cmbItemDescription.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cmbItemDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // txt_Note
+            // 
+            this.txt_Note.HeaderText = "Note";
+            this.txt_Note.Name = "txt_Note";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.HeaderText = "Quantity";
+            this.txtQuantity.Name = "txtQuantity";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.HeaderText = "Price";
+            this.txtPrice.Name = "txtPrice";
+            // 
+            // txt_Tax
+            // 
+            this.txt_Tax.HeaderText = "Tax";
+            this.txt_Tax.Name = "txt_Tax";
+            // 
+            // txtExclAmount
+            // 
+            this.txtExclAmount.HeaderText = "ExclAmount";
+            this.txtExclAmount.Name = "txtExclAmount";
+            // 
+            // txtTaxAmount
+            // 
+            this.txtTaxAmount.HeaderText = "TaxAmount";
+            this.txtTaxAmount.Name = "txtTaxAmount";
+            // 
+            // txtInclAmount
+            // 
+            this.txtInclAmount.HeaderText = "InclAmount";
+            this.txtInclAmount.Name = "txtInclAmount";
             // 
             // frmSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(610, 542);
+            this.ClientSize = new System.Drawing.Size(977, 542);
             this.Controls.Add(this.btnSaveOrder);
             this.Controls.Add(this.mainPnl);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -383,7 +449,7 @@ namespace Sales_Records_Application
             this.Load += new System.EventHandler(this.frmSales_Load);
             this.mainPnl.ResumeLayout(false);
             this.mainPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -413,7 +479,7 @@ namespace Sales_Records_Application
         private System.Windows.Forms.TextBox txtInvo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSales;
         private System.Windows.Forms.Button btnSaveOrder;
         private System.Windows.Forms.TextBox txtPcode;
         private System.Windows.Forms.TextBox txtState;
@@ -421,6 +487,15 @@ namespace Sales_Records_Application
         private System.Windows.Forms.TextBox txtSubrb;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cmbItemCode;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cmbItemDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txt_Note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txt_Tax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtExclAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtTaxAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtInclAmount;
     }
 }
 

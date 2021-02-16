@@ -86,8 +86,17 @@ namespace Sales_Records_Application
 
             Clsdb clsdb = new Clsdb();
 
-            DataTable dt = new DataTable();
-            dt = clsdb.cusCombo(cmbCustomer);
+            DataTable dt3= new DataTable();
+            DataTable dt2 = new DataTable();
+            clsdb.cusCombo(cmbCustomer);
+
+            dt2 = clsdb.populateItemCombo();
+            dt3 = clsdb.populateSalesDGV();
+            cmbItemCode.ValueMember = "item_code";
+            cmbItemCode.DisplayMember = "item_des";
+            cmbItemCode.DataSource = dt2;
+
+
         }
     }
 }
